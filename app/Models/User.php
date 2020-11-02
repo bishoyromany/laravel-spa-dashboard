@@ -24,6 +24,7 @@ class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
         'name',
         'email',
         'password',
+        'role_key'
     ];
 
     /**
@@ -53,6 +54,13 @@ class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
     protected $appends = [
         'photo_url',
     ];
+
+    /**
+     * Allowes Load Roles With The User
+     *
+     * @var array
+     */
+    protected $with = ['role'];
 
     /**
      * Get the profile photo URL attribute.
@@ -112,5 +120,23 @@ class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * Get Roles List Of The User
+     *
+     * @return Roles
+     */
+    public function role(){
+        return $this->hasOne(\App\Models\Roles::class, 'key', 'role_key');
+    }
+
+    /**
+     * Return Array Of Rules
+     *
+     * @return array
+     */
+    public function roles(): array{
+        dd($this->role);
     }
 }
