@@ -26,8 +26,8 @@ class AddRolesToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropIfExists('role_key');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->dropIfExists('role_key');
+        // });
     }
 }

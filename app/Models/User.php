@@ -130,13 +130,4 @@ class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
     public function role(){
         return $this->hasOne(\App\Models\Roles::class, 'key', 'role_key');
     }
-
-    /**
-     * Return Array Of Rules
-     *
-     * @return array
-     */
-    public function roles(): array{
-        dd($this->role);
-    }
 }

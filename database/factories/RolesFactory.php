@@ -24,7 +24,7 @@ class RolesFactory extends Factory
         return [
             'title' => $this->faker->sentence(6),
             'description' => $this->faker->sentence(20),
-            'roles'       => json_encode($this->faker->words(3)),
+            'roles'       => $this->faker->words(3),
             'key'         => $this->faker->safeEmail
         ];
     }

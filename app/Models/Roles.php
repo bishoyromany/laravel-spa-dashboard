@@ -23,6 +23,9 @@ class Roles extends Model
         'title', 'description', 'roles', 'key'
     ];
 
+    /**
+     * @var array
+     */
     protected $casts = [
         'roles' => 'array',
     ];

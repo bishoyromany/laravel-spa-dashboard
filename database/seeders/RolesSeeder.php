@@ -16,23 +16,23 @@ class RolesSeeder extends Seeder
                 'title'         => 'Admin',
                 'description'   => 'Admin Role',
                 'key'           => 'ADMIN',
-                'roles'         => json_encode([
+                'roles'         => [
                     'ADMIN'
-                ])
+                ]
             ],
             [
                 'title'         => 'Member',
                 'description'   => 'Member Role',
                 'key'           => 'MEMBER',
-                'roles'         => json_encode([
+                'roles'         => [
                     'VIEW', 'BROWSE'
-                ])
+                ]
             ],
             [
                 'title'         => 'Guest',
                 'description'   => 'Guest Role',
                 'key'           => 'GUEST',
-                'roles'         => json_encode([])
+                'roles'         => []
             ]
         ];
     }
